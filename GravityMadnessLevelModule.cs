@@ -95,6 +95,8 @@ namespace GravityMadness
                         collisionHandler.rb.AddForce(currentGravity, ForceMode.Acceleration);
                     }
                 }
+                Player.local.locomotion.SetPhysicModifier(this, 5, 0f);
+                Player.local.locomotion.rb.AddForce(currentGravity, ForceMode.Acceleration);
             }
             else
             {
@@ -109,6 +111,7 @@ namespace GravityMadness
                         collisionHandler.RemovePhysicModifier(this);
                     }
                 }
+                Player.local.locomotion.RemovePhysicModifier(this);
             }
         }
 
